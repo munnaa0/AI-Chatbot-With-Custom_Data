@@ -1,0 +1,26 @@
+{
+  "qa_pairs": [
+    {
+      "question": "What programs does MCT offer?",
+      "answer": "We offer B.Sc. in Multimedia and Creative Technology and Diploma in Digital Content Creation."
+    },
+    {
+      "question": "What are the admission requirements?",
+      "answer": "Undergraduate: Minimum GPA 2.5 in SSC+HSC. Diploma: 4-year relevant diploma with GPA 2.5."
+    }
+  ],
+  "facts": [
+    {
+      "topic": "Facilities",
+      "info": "State-of-the-art labs: AR Lab, Motion Capture Studio, 3D Animation Lab"
+    },
+    {
+      "topic": "Contact",
+      "info": "Email: mct@diu.edu.bd | Phone: +880 1234-567890 | Location: Knowledge Tower"
+    },
+    {
+      "topic": "Developer",
+      "info": "Developer of this app is Md. Sultan Mahmud Munna"
+    }
+  ]
+}

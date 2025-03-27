@@ -1,0 +1,147 @@
+{
+  "Department": {
+    "name": "Multimedia and Creative Technology (MCT)",
+    "institution": "Daffodil International University",
+    "established": 2018,
+    "vision": "Blending creativity with technical expertise in digital media education",
+    "objectives": [
+      "Develop industry-ready professionals in multimedia and CGI",
+      "Encourage innovation through hands-on projects",
+      "Integrate AI into creative workflows",
+      "Foster research in astrophysics visualization"
+    ],
+    "focusAreas": [
+      "3D Modeling & Animation",
+      "Game Design & Development",
+      "Visual Effects (VFX) & CGI",
+      "AI in Creative Media",
+      "Astrophysics Visualization"
+    ]
+  },
+  "Academics": {
+    "programs": [
+      "B.Sc. in Multimedia and Creative Technology",
+      "M.Sc. in Digital Arts and AI",
+      "Diploma in Digital Content Creation"
+    ],
+    "curriculum": {
+      "coreCourses": [
+        "Advanced 3D Modeling",
+        "Game Engine Architecture",
+        "AI-Driven Animation",
+        "Astrophysics Data Visualization"
+      ],
+      "workshops": [
+        "Future of 3D: AI in CGI",
+        "মহাবিশ্বে আমরা কোথায় (Where Are We in the Universe?)"
+      ]
+    },
+    "admission": {
+      "requirements": {
+        "undergraduate": {
+          "academic": "Minimum GPA 2.5 in SSC+HSC",
+          "portfolio": "Creative work submission",
+          "language": "IELTS 5.5/TOEFL 550"
+        },
+        "postgraduate": {
+          "degree": "Relevant bachelor's with CGPA 2.75",
+          "researchProposal": "Required"
+        }
+      },
+      "deadline": "June 30, 2024"
+    }
+  },
+  "Faculty": {
+    "members": [
+      {
+        "name": "Prof. Dr. Syed Akhter Hossain",
+        "role": "Dean, Faculty of Science & IT",
+        "expertise": ["AI", "Computer Vision"]
+      },
+      {
+        "name": "Mr. Md. Salah Uddin",
+        "role": "Department Head",
+        "expertise": ["Multimedia Systems", "Game Design"]
+      },
+      {
+        "name": "Mr. Arif Ahmed",
+        "role": "Professor of Practice",
+        "expertise": ["Astrophysics", "Data Visualization"]
+      }
+    ],
+    "achievements": [
+      "Developed AR-based e-commerce platforms",
+      "Supervised award-winning animated short films",
+      "Pioneered Bangladesh's first academic astrophysics center"
+    ]
+  },
+  "Research": {
+    "AI": {
+      "projects": [
+        "AI-generated CGI for film",
+        "Neural networks for procedural animation"
+      ],
+      "events": ["Annual AI in 3D Hackathon"]
+    },
+    "Astrophysics": {
+      "facilities": ["Radio Telescopes", "Cosmic Simulation Lab"],
+      "collaborations": ["MicB", "Mohabritto"]
+    },
+    "studentProjects": [
+      "Save the Earth (2D Animation)",
+      "AR E-Commerce Interface",
+      "The Pole Star (Animated Film)"
+    ]
+  },
+  "Events": {
+    "pastEvents": [
+      {
+        "name": "Future of 3D: AI in CGI",
+        "date": "2023-05-19",
+        "speakers": ["Tanvir M.N. Islam (Keywords Studios)"]
+      },
+      {
+        "name": "ICT Carnival",
+        "date": "2019",
+        "showcases": ["VR Experiences", "Game Demos"]
+      }
+    ],
+    "upcoming": [
+      "AI Animation Lab Launch (2025)",
+      "Virtual Reality Film Studio (2026)"
+    ]
+  },
+  "Facilities": {
+    "labs": [
+      "Augmented Reality Lab",
+      "Motion Capture Studio",
+      "Astrophysics Observation Deck"
+    ],
+    "equipment": [
+      "Wacom Cintiq Pro 24",
+      "Unreal Engine Workstations",
+      "Radio Telescopes"
+    ]
+  },
+  "Collaborations": {
+    "industry": ["Keywords Studios", "Hankook Tires", "Bengal Biscuits"],
+    "academic": ["DIU Astrophysics Center"]
+  },
+  "Career": {
+    "alumniRoles": [
+      "3D Modeler at Ubisoft",
+      "VFX Artist in Hollywood",
+      "AI Research Scientist"
+    ],
+    "placementSupport": [
+      "DIU Creative Park Incubator",
+      "Employability 360° Program"
+    ]
+  },
+  "Contact": {
+    "location": "Knowledge Tower, Level 10, DIU Smart City, Dhaka",
+    "email": "mct@diu.edu.bd",
+    "phone": "+880 1234-567890",
+    "website": "https://daffodilvarsity.edu.bd/department/mct"
+  }
+}
