@@ -1,0 +1,920 @@
+{
+  "recipes": [
+    {
+      "name": "Rice",
+      "aliases": ["Steamed Rice", "White Rice", "Plain Rice", "Vat"],
+      "ingredients": [
+        "1 cup rice",
+        "2 cups water",
+        "Salt to taste",
+        "1 tsp oil (optional)"
+      ],
+      "instructions": [
+        "Rinse the rice thoroughly under running water.",
+        "Bring water to a boil in a medium-sized pot.",
+        "Add rice, salt, and oil (if using) to the boiling water.",
+        "Reduce heat to low, cover the pot, and simmer for 15-20 minutes until the water is absorbed.",
+        "Turn off the heat and let it rest for 5 minutes before serving."
+      ]
+    },
+    {
+      "name": "Pasta",
+      "aliases": ["Spaghetti", "Noodles", "Macaroni"],
+      "ingredients": [
+        "200g pasta",
+        "4 cups water",
+        "Salt to taste",
+        "1 tbsp olive oil"
+      ],
+      "instructions": [
+        "Fill a large pot with water and bring it to a boil.",
+        "Add salt and olive oil to the boiling water.",
+        "Add the pasta and cook according to the package instructions until al dente.",
+        "Drain the pasta and serve with your favorite sauce."
+      ]
+    },
+    {
+      "name": "Scrambled Eggs",
+      "aliases": ["Breakfast Eggs", "Soft Eggs", "Buttered Eggs"],
+      "ingredients": [
+        "3 eggs",
+        "2 tbsp milk",
+        "Salt and pepper to taste",
+        "1 tsp butter"
+      ],
+      "instructions": [
+        "Crack the eggs into a bowl and whisk with milk, salt, and pepper.",
+        "Heat butter in a non-stick pan over medium heat.",
+        "Pour in the egg mixture and gently stir until curds form.",
+        "Cook until eggs are softly scrambled, then serve."
+      ]
+    },
+    {
+      "name": "Grilled Cheese Sandwich",
+      "aliases": ["Toastie", "Cheese Toast", "Melted Cheese Sandwich"],
+      "ingredients": [
+        "2 slices of bread",
+        "2 slices of cheese",
+        "1 tbsp butter"
+      ],
+      "instructions": [
+        "Butter one side of each bread slice.",
+        "Place one slice, butter side down, on a skillet over medium heat.",
+        "Add cheese and top with the second slice, butter side up.",
+        "Grill until golden brown on both sides and cheese is melted."
+      ]
+    },
+    {
+      "name": "Pancakes",
+      "aliases": ["Hotcakes", "Griddle Cakes", "Flapjacks"],
+      "ingredients": [
+        "1 cup flour",
+        "1 tbsp sugar",
+        "1 tsp baking powder",
+        "1 egg",
+        "1 cup milk",
+        "2 tbsp melted butter"
+      ],
+      "instructions": [
+        "Mix flour, sugar, and baking powder in a bowl.",
+        "Whisk in egg, milk, and melted butter until smooth.",
+        "Heat a lightly oiled griddle over medium heat.",
+        "Pour batter onto the griddle and cook until bubbles form, then flip and cook until golden."
+      ]
+    },
+    {
+      "name": "French Toast",
+      "aliases": ["Eggy Bread", "Pain Perdu", "Golden Bread"],
+      "ingredients": [
+        "4 slices of bread",
+        "2 eggs",
+        "1/2 cup milk",
+        "1 tsp vanilla extract",
+        "Butter for frying"
+      ],
+      "instructions": [
+        "Beat eggs, milk, and vanilla together in a shallow bowl.",
+        "Dip bread slices into the mixture, coating both sides.",
+        "Heat butter in a skillet over medium heat.",
+        "Cook bread slices until golden brown on both sides."
+      ]
+    },
+    {
+      "name": "Caesar Salad",
+      "aliases": [
+        "Romaine Salad",
+        "Garlic Crouton Salad",
+        "Anchovy Dressing Salad"
+      ],
+      "ingredients": [
+        "1 head romaine lettuce, chopped",
+        "1/2 cup croutons",
+        "1/4 cup Parmesan cheese, grated",
+        "Caesar dressing"
+      ],
+      "instructions": [
+        "Wash and chop the romaine lettuce.",
+        "In a bowl, combine lettuce, croutons, and Parmesan cheese.",
+        "Drizzle Caesar dressing and toss well before serving."
+      ]
+    },
+    {
+      "name": "Vegetable Stir Fry",
+      "aliases": [
+        "Mixed Veggie Sauté",
+        "Asian Vegetables",
+        "Wok-tossed Veggies"
+      ],
+      "ingredients": [
+        "1 cup broccoli florets",
+        "1 cup sliced bell peppers",
+        "1 carrot, julienned",
+        "2 tbsp soy sauce",
+        "1 tbsp olive oil",
+        "1 clove garlic, minced"
+      ],
+      "instructions": [
+        "Heat olive oil in a wok over medium-high heat.",
+        "Add garlic and stir-fry for 30 seconds.",
+        "Add broccoli, bell peppers, and carrot, stirring constantly.",
+        "Pour in soy sauce and cook until vegetables are tender yet crisp."
+      ]
+    },
+    {
+      "name": "Chicken Soup",
+      "aliases": ["Chicken Broth", "Avgolemono", "Chicken Noodle Soup"],
+      "ingredients": [
+        "1 lb chicken breast, diced",
+        "4 cups chicken broth",
+        "1 cup diced carrots",
+        "1 cup diced celery",
+        "1 onion, chopped",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "In a large pot, sauté onions until translucent.",
+        "Add chicken and cook until lightly browned.",
+        "Add carrots, celery, and chicken broth.",
+        "Bring to a boil, then reduce heat and simmer until chicken is cooked and vegetables are tender."
+      ]
+    },
+    {
+      "name": "Beef Stew",
+      "aliases": ["Beef Bourguignon", "Hotpot", "Beef Goulash"],
+      "ingredients": [
+        "1 lb beef stew meat, cubed",
+        "2 cups beef broth",
+        "2 potatoes, cubed",
+        "2 carrots, sliced",
+        "1 onion, chopped",
+        "1 tsp thyme",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Brown beef cubes in a large pot over medium heat.",
+        "Add onions and cook until softened.",
+        "Stir in beef broth, potatoes, carrots, thyme, salt, and pepper.",
+        "Simmer on low heat for 1-2 hours until beef is tender."
+      ]
+    },
+    {
+      "name": "Vegetable Curry",
+      "aliases": ["Sabzi Curry", "Mixed Veg Curry", "Indian Curry"],
+      "ingredients": [
+        "1 cup cauliflower florets",
+        "1 cup diced potatoes",
+        "1 cup peas",
+        "1 onion, chopped",
+        "2 tbsp curry powder",
+        "1 can coconut milk",
+        "Salt to taste"
+      ],
+      "instructions": [
+        "Sauté onions in a pot until softened.",
+        "Add curry powder and stir for 1 minute.",
+        "Mix in cauliflower, potatoes, peas, and coconut milk.",
+        "Simmer until vegetables are tender and flavors meld."
+      ]
+    },
+    {
+      "name": "Fried Rice",
+      "aliases": ["Yangzhou Fried Rice", "Chāhan", "Stir-fry Rice"],
+      "ingredients": [
+        "2 cups cooked rice",
+        "1 cup mixed vegetables",
+        "2 eggs, beaten",
+        "2 tbsp soy sauce",
+        "1 tbsp oil",
+        "1 clove garlic, minced"
+      ],
+      "instructions": [
+        "Heat oil in a large pan over medium-high heat.",
+        "Add garlic and mixed vegetables, stir-fry for 3 minutes.",
+        "Push vegetables aside and scramble the eggs in the same pan.",
+        "Mix in cooked rice and soy sauce, stir-fry until heated through."
+      ]
+    },
+    {
+      "name": "Omelette",
+      "aliases": ["French Omelette", "Folded Eggs", "Egg Pancake"],
+      "ingredients": [
+        "3 eggs",
+        "1/4 cup chopped bell peppers",
+        "1/4 cup chopped onions",
+        "Salt and pepper to taste",
+        "1 tsp butter"
+      ],
+      "instructions": [
+        "Beat the eggs with salt and pepper in a bowl.",
+        "Melt butter in a skillet over medium heat.",
+        "Add onions and bell peppers, sauté until soft.",
+        "Pour in eggs and cook until set, then fold and serve."
+      ]
+    },
+    {
+      "name": "Spaghetti Bolognese",
+      "aliases": ["Pasta alla Bolognese", "Meat Sauce Pasta", "Ragu"],
+      "ingredients": [
+        "200g spaghetti",
+        "1/2 lb ground beef",
+        "1 can diced tomatoes",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "1 tsp Italian seasoning",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Cook spaghetti according to package instructions.",
+        "Sauté onions and garlic until soft in a pan.",
+        "Add ground beef and cook until browned.",
+        "Stir in diced tomatoes, Italian seasoning, salt, and pepper; simmer for 15 minutes.",
+        "Serve sauce over spaghetti."
+      ]
+    },
+    {
+      "name": "Tacos",
+      "aliases": ["Mexican Tacos", "Soft Shell Tacos", "Street Tacos"],
+      "ingredients": [
+        "8 taco shells",
+        "1/2 lb ground beef",
+        "1 packet taco seasoning",
+        "1 cup shredded lettuce",
+        "1 cup diced tomatoes",
+        "1 cup shredded cheese"
+      ],
+      "instructions": [
+        "Cook ground beef in a skillet over medium heat until browned.",
+        "Add taco seasoning with a little water and simmer.",
+        "Fill taco shells with beef, lettuce, tomatoes, and cheese.",
+        "Serve immediately."
+      ]
+    },
+    {
+      "name": "Guacamole",
+      "aliases": ["Avocado Dip", "Mexican Guac", "Ahuacamolli"],
+      "ingredients": [
+        "2 ripe avocados",
+        "1 small onion, finely chopped",
+        "1 tomato, diced",
+        "1 lime, juiced",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Scoop out avocado flesh into a bowl.",
+        "Mash with a fork until creamy.",
+        "Stir in onion, tomato, lime juice, salt, and pepper.",
+        "Mix well and serve with tortilla chips."
+      ]
+    },
+    {
+      "name": "Mashed Potatoes",
+      "aliases": ["Creamed Potatoes", "Whipped Potatoes", "Buttered Potatoes"],
+      "ingredients": [
+        "4 potatoes, peeled and cubed",
+        "1/4 cup milk",
+        "2 tbsp butter",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Boil potatoes until tender.",
+        "Drain and mash potatoes with butter and milk.",
+        "Season with salt and pepper, and serve warm."
+      ]
+    },
+    {
+      "name": "Quinoa Salad",
+      "aliases": ["Superfood Salad", "Ancient Grain Salad", "Protein Salad"],
+      "ingredients": [
+        "1 cup quinoa",
+        "2 cups water",
+        "1 cup cherry tomatoes, halved",
+        "1 cucumber, diced",
+        "1/4 cup olive oil",
+        "2 tbsp lemon juice",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Rinse quinoa and cook with water until fluffy.",
+        "In a bowl, combine quinoa, tomatoes, and cucumber.",
+        "Whisk olive oil, lemon juice, salt, and pepper; pour over salad.",
+        "Toss well and chill before serving."
+      ]
+    },
+    {
+      "name": "Tomato Soup",
+      "aliases": ["Red Soup", "Cream of Tomato", "Gazpacho (hot version)"],
+      "ingredients": [
+        "4 cups chopped tomatoes",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "2 cups vegetable broth",
+        "1 tbsp olive oil",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Heat olive oil in a pot and sauté onions and garlic.",
+        "Add tomatoes and cook until softened.",
+        "Pour in vegetable broth and simmer for 20 minutes.",
+        "Blend the mixture until smooth and season with salt and pepper."
+      ]
+    },
+    {
+      "name": "Chili Con Carne",
+      "aliases": ["Texas Chili", "Bean Chili", "Spicy Meat Stew"],
+      "ingredients": [
+        "1/2 lb ground beef",
+        "1 can kidney beans, drained",
+        "1 can diced tomatoes",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "1 tbsp chili powder",
+        "Salt to taste"
+      ],
+      "instructions": [
+        "Brown ground beef with onions and garlic in a pot.",
+        "Add diced tomatoes, kidney beans, and chili powder.",
+        "Simmer for 30 minutes, stirring occasionally.",
+        "Season with salt and serve hot."
+      ]
+    },
+    {
+      "name": "Veggie Burger",
+      "aliases": ["Plant-based Burger", "Vegetarian Patty", "Bean Burger"],
+      "ingredients": [
+        "1 can black beans, drained and mashed",
+        "1/2 cup breadcrumbs",
+        "1 egg",
+        "1/4 cup chopped bell peppers",
+        "1 tsp cumin",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Combine all ingredients in a bowl and mix well.",
+        "Form into patties.",
+        "Cook in a lightly oiled skillet over medium heat until browned on both sides.",
+        "Serve on a bun with desired toppings."
+      ]
+    },
+    {
+      "name": "Chicken Curry",
+      "aliases": ["Murgh Kari", "Indian Chicken", "Kuku Paka"],
+      "ingredients": [
+        "1 lb chicken pieces",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "1 tbsp curry powder",
+        "1 can coconut milk",
+        "1 tbsp oil",
+        "Salt to taste"
+      ],
+      "instructions": [
+        "Heat oil in a pan and sauté onions and garlic.",
+        "Add chicken pieces and brown on all sides.",
+        "Stir in curry powder and cook for 2 minutes.",
+        "Pour in coconut milk, simmer until chicken is cooked through.",
+        "Season with salt and serve with rice."
+      ]
+    },
+    {
+      "name": "Fish Tacos",
+      "aliases": ["Baja Tacos", "Seafood Tacos", "Pescado Tacos"],
+      "ingredients": [
+        "4 small tortillas",
+        "1/2 lb white fish fillets",
+        "1 cup shredded cabbage",
+        "1 lime, juiced",
+        "1 tbsp olive oil",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Season fish with salt and pepper and cook in olive oil until flaky.",
+        "Warm tortillas in a skillet.",
+        "Assemble tacos with fish, shredded cabbage, and a squeeze of lime.",
+        "Serve immediately."
+      ]
+    },
+    {
+      "name": "Grilled Chicken",
+      "aliases": ["BBQ Chicken", "Charcoal Chicken", "Flame-grilled Chicken"],
+      "ingredients": [
+        "4 chicken breasts",
+        "2 tbsp olive oil",
+        "1 tsp paprika",
+        "1 tsp garlic powder",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Preheat the grill to medium-high heat.",
+        "Brush chicken with olive oil and season with paprika, garlic powder, salt, and pepper.",
+        "Grill chicken for 6-8 minutes on each side until fully cooked.",
+        "Let rest for a few minutes before serving."
+      ]
+    },
+    {
+      "name": "Roast Beef",
+      "aliases": ["Sunday Roast", "Prime Rib", "Beef Joint"],
+      "ingredients": [
+        "2 lb beef roast",
+        "2 tbsp olive oil",
+        "2 garlic cloves, minced",
+        "1 tsp rosemary",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Preheat the oven to 375°F (190°C).",
+        "Rub beef with olive oil, garlic, rosemary, salt, and pepper.",
+        "Place in a roasting pan and cook for 1.5 to 2 hours until desired doneness.",
+        "Let rest before slicing and serving."
+      ]
+    },
+    {
+      "name": "Baked Salmon",
+      "aliases": ["Oven Salmon", "Lemon Salmon", "Cedar Plank Salmon"],
+      "ingredients": [
+        "4 salmon fillets",
+        "2 tbsp olive oil",
+        "1 lemon, sliced",
+        "Salt and pepper to taste",
+        "Fresh dill (optional)"
+      ],
+      "instructions": [
+        "Preheat oven to 400°F (200°C).",
+        "Place salmon on a lined baking tray, drizzle with olive oil, and season with salt and pepper.",
+        "Top with lemon slices and dill if using.",
+        "Bake for 12-15 minutes until salmon is cooked through."
+      ]
+    },
+    {
+      "name": "Garlic Bread",
+      "aliases": ["Bruschetta", "Aglio e Olio Bread", "Cheesy Garlic Toast"],
+      "ingredients": [
+        "1 baguette",
+        "4 tbsp butter, softened",
+        "3 cloves garlic, minced",
+        "2 tbsp chopped parsley"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "Mix butter, garlic, and parsley in a bowl.",
+        "Slice the baguette and spread the garlic butter on each slice.",
+        "Bake for 10 minutes until crisp and golden."
+      ]
+    },
+    {
+      "name": "Cucumber Salad",
+      "aliases": ["Tzatziki Salad", "Sunomono", "Cool Cucumber Mix"],
+      "ingredients": [
+        "2 cucumbers, thinly sliced",
+        "1/4 red onion, thinly sliced",
+        "2 tbsp vinegar",
+        "1 tbsp olive oil",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Combine cucumbers and red onion in a bowl.",
+        "Mix vinegar, olive oil, salt, and pepper in a small bowl.",
+        "Pour dressing over vegetables and toss gently.",
+        "Refrigerate for 30 minutes before serving."
+      ]
+    },
+    {
+      "name": "Beef Burgers",
+      "aliases": ["Hamburgers", "Burger Patties", "Beef Sliders"],
+      "ingredients": [
+        "1 lb ground beef",
+        "4 burger buns",
+        "1/2 onion, finely chopped",
+        "Salt and pepper to taste",
+        "Optional toppings: lettuce, tomato, cheese"
+      ],
+      "instructions": [
+        "Mix ground beef with chopped onion, salt, and pepper.",
+        "Form into 4 patties.",
+        "Grill patties over medium-high heat for 5-7 minutes on each side.",
+        "Assemble burgers with buns and desired toppings."
+      ]
+    },
+    {
+      "name": "Caprese Salad",
+      "aliases": ["Italian Flag Salad", "Mozzarella Tomato Salad", "Tricolore"],
+      "ingredients": [
+        "2 tomatoes, sliced",
+        "8 oz fresh mozzarella, sliced",
+        "Fresh basil leaves",
+        "2 tbsp olive oil",
+        "Balsamic glaze",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Arrange tomato and mozzarella slices alternately on a plate.",
+        "Top with basil leaves.",
+        "Drizzle olive oil and balsamic glaze over the salad.",
+        "Season with salt and pepper before serving."
+      ]
+    },
+    {
+      "name": "Shrimp Scampi",
+      "aliases": ["Garlic Shrimp", "Prawn Scampi", "Butter Garlic Shrimp"],
+      "ingredients": [
+        "1/2 lb shrimp, peeled and deveined",
+        "3 cloves garlic, minced",
+        "2 tbsp butter",
+        "2 tbsp olive oil",
+        "1/4 cup white wine (optional)",
+        "Juice of 1 lemon",
+        "Salt and pepper to taste",
+        "Chopped parsley"
+      ],
+      "instructions": [
+        "Heat butter and olive oil in a skillet over medium heat.",
+        "Add garlic and sauté until fragrant.",
+        "Add shrimp and cook until pink.",
+        "Stir in white wine and lemon juice; simmer for 2 minutes.",
+        "Season with salt and pepper, garnish with parsley, and serve."
+      ]
+    },
+    {
+      "name": "Stuffed Peppers",
+      "aliases": ["Dolma", "Gemista", "Farçi Poivrons"],
+      "ingredients": [
+        "4 bell peppers, tops cut and seeded",
+        "1 cup cooked rice",
+        "1/2 lb ground beef or turkey",
+        "1 can diced tomatoes",
+        "1 onion, chopped",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "Sauté onion and ground meat until cooked.",
+        "Mix in cooked rice and diced tomatoes; season with salt and pepper.",
+        "Fill each pepper with the mixture and place in a baking dish.",
+        "Cover with foil and bake for 30-35 minutes."
+      ]
+    },
+    {
+      "name": "Meatloaf",
+      "aliases": ["Meat Cake", "Minced Meat Loaf", "American Loaf"],
+      "ingredients": [
+        "1 lb ground beef",
+        "1/2 cup breadcrumbs",
+        "1 egg",
+        "1/4 cup milk",
+        "1 small onion, finely chopped",
+        "1 tbsp Worcestershire sauce",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Preheat oven to 350°F (175°C).",
+        "Mix all ingredients in a bowl until well combined.",
+        "Shape the mixture into a loaf and place in a baking pan.",
+        "Bake for 45-50 minutes until cooked through, then let it rest before slicing."
+      ]
+    },
+    {
+      "name": "Banana Bread",
+      "aliases": ["Fruit Bread", "Moist Banana Cake", "Breakfast Loaf"],
+      "ingredients": [
+        "3 ripe bananas, mashed",
+        "2 cups flour",
+        "1/2 cup sugar",
+        "1/3 cup melted butter",
+        "1 egg",
+        "1 tsp baking soda",
+        "Pinch of salt"
+      ],
+      "instructions": [
+        "Preheat oven to 350°F (175°C) and grease a loaf pan.",
+        "Mix mashed bananas with melted butter and egg in a bowl.",
+        "Stir in flour, sugar, baking soda, and salt until just combined.",
+        "Pour into the loaf pan and bake for 60-65 minutes until a toothpick comes out clean."
+      ]
+    },
+    {
+      "name": "Chocolate Chip Cookies",
+      "aliases": [
+        "Toll House Cookies",
+        "American Cookies",
+        "Choc Chip Biscuits"
+      ],
+      "ingredients": [
+        "1 cup butter, softened",
+        "1 cup sugar",
+        "1 cup brown sugar",
+        "2 eggs",
+        "2 tsp vanilla extract",
+        "3 cups flour",
+        "1 tsp baking soda",
+        "1/2 tsp salt",
+        "2 cups chocolate chips"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "Cream butter with sugars until light and fluffy.",
+        "Beat in eggs and vanilla.",
+        "Mix in flour, baking soda, and salt, then stir in chocolate chips.",
+        "Drop spoonfuls onto a baking sheet and bake for 8-10 minutes."
+      ]
+    },
+    {
+      "name": "Lemonade",
+      "aliases": ["Citrus Drink", "Fresh Lemon Juice", "Summer Quencher"],
+      "ingredients": [
+        "1 cup lemon juice",
+        "4 cups water",
+        "1/2 cup sugar",
+        "Ice cubes"
+      ],
+      "instructions": [
+        "In a pitcher, combine lemon juice and sugar.",
+        "Stir until the sugar dissolves.",
+        "Add water and mix well.",
+        "Serve over ice."
+      ]
+    },
+    {
+      "name": "Smoothie Bowl",
+      "aliases": ["Acai Bowl", "Breakfast Bowl", "Fruit Smoothie Bowl"],
+      "ingredients": [
+        "1 frozen banana",
+        "1/2 cup frozen berries",
+        "1/2 cup yogurt",
+        "1/4 cup milk",
+        "Toppings: granola, sliced fruits, honey"
+      ],
+      "instructions": [
+        "Blend frozen banana, berries, yogurt, and milk until smooth.",
+        "Pour into a bowl and top with granola, sliced fruits, and a drizzle of honey.",
+        "Serve immediately."
+      ]
+    },
+    {
+      "name": "Avocado Toast",
+      "aliases": ["Millennial Toast", "Green Toast", "Healthy Breakfast"],
+      "ingredients": [
+        "2 slices of bread",
+        "1 ripe avocado",
+        "Salt and pepper to taste",
+        "Red pepper flakes (optional)",
+        "Lemon juice"
+      ],
+      "instructions": [
+        "Toast the bread slices to your liking.",
+        "Mash the avocado with lemon juice, salt, and pepper.",
+        "Spread the avocado mixture on the toast.",
+        "Sprinkle red pepper flakes on top if desired."
+      ]
+    },
+    {
+      "name": "Waffles",
+      "aliases": ["Belgian Waffles", "Breakfast Waffles", "Griddle Cakes"],
+      "ingredients": [
+        "2 cups flour",
+        "2 eggs",
+        "1 3/4 cups milk",
+        "1/2 cup vegetable oil",
+        "1 tbsp baking powder",
+        "1/4 cup sugar",
+        "Pinch of salt"
+      ],
+      "instructions": [
+        "Preheat your waffle iron.",
+        "Mix flour, baking powder, sugar, and salt in a bowl.",
+        "Whisk in eggs, milk, and oil until smooth.",
+        "Pour batter onto the waffle iron and cook until golden brown."
+      ]
+    },
+    {
+      "name": "Rice Pilaf",
+      "aliases": ["Persian Rice", "Buttered Rice", "Spiced Rice"],
+      "ingredients": [
+        "1 cup rice",
+        "2 cups chicken or vegetable broth",
+        "1 small onion, diced",
+        "1 tbsp butter",
+        "Salt to taste"
+      ],
+      "instructions": [
+        "Sauté diced onion in butter until translucent.",
+        "Add rice and stir for 2 minutes.",
+        "Pour in broth and bring to a boil.",
+        "Reduce heat, cover, and simmer until rice is tender.",
+        "Fluff with a fork and serve."
+      ]
+    },
+    {
+      "name": "Fried Chicken",
+      "aliases": [
+        "Southern Fried Chicken",
+        "Crispy Chicken",
+        "Buttermilk Chicken"
+      ],
+      "ingredients": [
+        "1 lb chicken pieces",
+        "1 cup buttermilk",
+        "1 cup flour",
+        "1 tsp paprika",
+        "Salt and pepper to taste",
+        "Oil for frying"
+      ],
+      "instructions": [
+        "Marinate chicken pieces in buttermilk for at least 2 hours.",
+        "Mix flour, paprika, salt, and pepper in a bowl.",
+        "Dredge chicken in the flour mixture until coated.",
+        "Fry in hot oil until golden brown and cooked through."
+      ]
+    },
+    {
+      "name": "Egg Salad",
+      "aliases": ["Deviled Egg Spread", "Picnic Salad", "Hard-boiled Egg Mix"],
+      "ingredients": [
+        "6 hard-boiled eggs, chopped",
+        "1/4 cup mayonnaise",
+        "1 tsp mustard",
+        "Salt and pepper to taste",
+        "Chopped chives (optional)"
+      ],
+      "instructions": [
+        "Combine chopped eggs, mayonnaise, and mustard in a bowl.",
+        "Mix until well combined.",
+        "Season with salt, pepper, and add chives if using.",
+        "Serve chilled on bread or as a side dish."
+      ]
+    },
+    {
+      "name": "Cobb Salad",
+      "aliases": ["American Salad", "Chef's Salad", "Protein-packed Salad"],
+      "ingredients": [
+        "2 cups mixed greens",
+        "1 grilled chicken breast, sliced",
+        "2 hard-boiled eggs, quartered",
+        "1 avocado, diced",
+        "1 tomato, diced",
+        "1/4 cup blue cheese crumbles",
+        "Dressing of choice"
+      ],
+      "instructions": [
+        "Arrange mixed greens on a plate.",
+        "Top with sliced chicken, eggs, avocado, tomato, and blue cheese.",
+        "Drizzle with your favorite dressing and serve."
+      ]
+    },
+    {
+      "name": "Fettuccine Alfredo",
+      "aliases": ["White Pasta", "Creamy Fettuccine", "Italian Alfredo"],
+      "ingredients": [
+        "200g fettuccine",
+        "1 cup heavy cream",
+        "1/2 cup Parmesan cheese, grated",
+        "2 tbsp butter",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Cook fettuccine according to package instructions.",
+        "In a saucepan, melt butter and add heavy cream over medium heat.",
+        "Stir in Parmesan cheese until melted and smooth.",
+        "Combine pasta with the sauce, season with salt and pepper, and serve immediately."
+      ]
+    },
+    {
+      "name": "Risotto",
+      "aliases": ["Italian Rice", "Creamy Arborio", "Milanese Risotto"],
+      "ingredients": [
+        "1 cup Arborio rice",
+        "4 cups chicken or vegetable broth, warmed",
+        "1/2 cup white wine (optional)",
+        "1 small onion, chopped",
+        "2 tbsp butter",
+        "1/4 cup Parmesan cheese, grated",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Sauté onion in butter until translucent in a large pan.",
+        "Add Arborio rice and stir for 2 minutes.",
+        "Pour in white wine and let it absorb.",
+        "Gradually add warm broth, stirring constantly until the rice is creamy and al dente.",
+        "Stir in Parmesan cheese and season with salt and pepper."
+      ]
+    },
+    {
+      "name": "Pesto Pasta",
+      "aliases": ["Basil Pasta", "Genovese Pasta", "Green Sauce Pasta"],
+      "ingredients": [
+        "200g pasta",
+        "1 cup fresh basil leaves",
+        "1/4 cup pine nuts",
+        "1/2 cup Parmesan cheese, grated",
+        "1/2 cup olive oil",
+        "2 garlic cloves",
+        "Salt to taste"
+      ],
+      "instructions": [
+        "Cook pasta according to package instructions.",
+        "In a food processor, blend basil, pine nuts, Parmesan, garlic, olive oil, and salt until smooth.",
+        "Toss pasta with the pesto sauce and serve."
+      ]
+    },
+    {
+      "name": "Baked Ziti",
+      "aliases": ["Italian Casserole", "Cheesy Pasta Bake", "Tomato Ziti"],
+      "ingredients": [
+        "400g ziti pasta",
+        "2 cups marinara sauce",
+        "1 cup ricotta cheese",
+        "1 cup mozzarella cheese, shredded",
+        "1/2 cup Parmesan cheese, grated",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "Cook ziti pasta according to package instructions.",
+        "Mix pasta with marinara sauce and ricotta cheese.",
+        "Transfer to a baking dish, top with mozzarella and Parmesan.",
+        "Bake for 20-25 minutes until cheese is melted and bubbly."
+      ]
+    },
+    {
+      "name": "Greek Salad",
+      "aliases": ["Horiatiki", "Village Salad", "Mediterranean Salad"],
+      "ingredients": [
+        "2 cups chopped cucumbers",
+        "2 tomatoes, diced",
+        "1/2 red onion, thinly sliced",
+        "1/2 cup Kalamata olives",
+        "1/2 cup feta cheese, crumbled",
+        "2 tbsp olive oil",
+        "1 tbsp red wine vinegar",
+        "Salt and oregano to taste"
+      ],
+      "instructions": [
+        "Combine cucumbers, tomatoes, red onion, olives, and feta in a bowl.",
+        "Drizzle with olive oil and red wine vinegar.",
+        "Season with salt and oregano, toss gently, and serve chilled."
+      ]
+    },
+    {
+      "name": "Samosas",
+      "aliases": ["Indian Patties", "Vegetable Turnovers", "Spiced Pastries"],
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "4 tbsp oil",
+        "1/2 cup water (approx.)",
+        "2 cups boiled potatoes, mashed",
+        "1 cup peas",
+        "1 tsp garam masala",
+        "1 tsp cumin seeds",
+        "Salt to taste",
+        "Oil for frying"
+      ],
+      "instructions": [
+        "Mix flour, oil, and water to form a dough; let it rest.",
+        "Prepare filling by mixing mashed potatoes, peas, garam masala, cumin seeds, and salt.",
+        "Roll out dough and cut into small circles, fill with the mixture, and fold into triangles.",
+        "Deep fry until golden brown and serve hot."
+      ]
+    },
+    {
+      "name": "Pad Thai",
+      "aliases": ["Thai Noodles", "Stir-fried Noodles", "Street Food Noodles"],
+      "ingredients": [
+        "200g rice noodles",
+        "1/2 lb shrimp or tofu",
+        "2 eggs",
+        "1 cup bean sprouts",
+        "2 green onions, chopped",
+        "2 tbsp fish sauce",
+        "1 tbsp tamarind paste",
+        "2 tbsp vegetable oil",
+        "Crushed peanuts for garnish",
+        "Lime wedges"
+      ],
+      "instructions": [
+        "Soak rice noodles in warm water until softened.",
+        "Heat oil in a wok and scramble the eggs.",
+        "Add shrimp or tofu and cook until done.",
+        "Stir in noodles, fish sauce, and tamarind paste; toss well.",
+        "Mix in bean sprouts and green onions, garnish with peanuts, and serve with lime wedges."
+      ]
+    }
+  ]
+}

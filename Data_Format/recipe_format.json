@@ -1,0 +1,35 @@
+{
+  "recipes": [
+    {
+      "name": "rice",
+      "ingredients": [
+        "1 cup rice",
+        "2 cups water",
+        "Salt to taste",
+        "1 tsp oil (optional)"
+      ],
+      "instructions": [
+        "Rinse the rice thoroughly under running water.",
+        "Bring water to a boil in a medium-sized pot.",
+        "Add rice, salt, and oil (if using) to the boiling water.",
+        "Reduce heat to low, cover the pot, and simmer for 15-20 minutes until the water is absorbed.",
+        "Turn off the heat and let it rest for 5 minutes before serving."
+      ]
+    },
+    {
+      "name": "pasta",
+      "ingredients": [
+        "200g pasta",
+        "4 cups water",
+        "Salt to taste",
+        "1 tbsp olive oil"
+      ],
+      "instructions": [
+        "Fill a large pot with water and bring it to a boil.",
+        "Add salt and olive oil to the boiling water.",
+        "Add the pasta and cook according to the package instructions until al dente.",
+        "Drain the pasta and serve with your favorite sauce."
+      ]
+    }
+  ]
+}

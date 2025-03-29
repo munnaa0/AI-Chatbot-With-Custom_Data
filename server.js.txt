@@ -1,0 +1,236 @@
+const express = require("express");
+const cors = require("cors");
+const fs = require("fs");
+const path = require("path");
+const natural = require("natural");
+
+const app = express();
+const port = 3000;
+
+// Initialize NLP tools
+const { WordTokenizer, SentenceTokenizer, PorterStemmer } = natural;
+const wordTokenizer = new WordTokenizer();
+const sentenceTokenizer = new SentenceTokenizer();
+const stopwords = natural.stopwords;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.static("public"));
+
+// Data containers
+let structuredData = null;
+let qaData = null;
+let textData = null;
+
+// Load data from files
+try {
+  structuredData = JSON.parse(
+    fs.readFileSync(
+      path.join(__dirname, "data/structured_knowledge.json"),
+      "utf8"
+    )
+  );
+  qaData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "data/qa_data.json"), "utf8")
+  );
+  textData = fs.readFileSync(
+    path.join(__dirname, "data/custom_data.txt"),
+    "utf8"
+  );
+
+  console.log("✅ Data loaded successfully.");
+} catch (err) {
+  console.error("❌ Error loading data:", err.message);
+  process.exit(1);
+}
+
+// --- Helper Functions ---
+
+// Tokenize, remove stopwords, and stem
+function tokenizeAndStem(text) {
+  if (typeof text !== "string") return [];
+  return wordTokenizer
+    .tokenize(text.toLowerCase())
+    .filter((token) => token.length > 2 && !stopwords.includes(token))
+    .map((token) => PorterStemmer.stem(token));
+}
+
+// Compute Jaccard similarity between two arrays of tokens
+function jaccardSimilarity(tokensA, tokensB) {
+  const setA = new Set(tokensA);
+  const setB = new Set(tokensB);
+  const intersection = new Set([...setA].filter((x) => setB.has(x)));
+  const union = new Set([...setA, ...setB]);
+  return union.size === 0 ? 0 : intersection.size / union.size;
+}
+
+// Flatten a nested object into dot-separated key paths
+function flattenObject(obj, prefix = "") {
+  let result = {};
+  for (const key in obj) {
+    if (!obj.hasOwnProperty(key)) continue;
+    const newKey = prefix ? `${prefix}.${key}` : key;
+    if (
+      typeof obj[key] === "object" &&
+      obj[key] !== null &&
+      !Array.isArray(obj[key])
+    ) {
+      Object.assign(result, flattenObject(obj[key], newKey));
+    } else {
+      result[newKey] = obj[key];
+    }
+  }
+  return result;
+}
+
+// --- Search Functions ---
+
+// Search in QA data (questions and facts)
+function searchQAData(query) {
+  const queryTokens = tokenizeAndStem(query);
+  let best = { score: 0, source: "QA", answer: null };
+
+  // Check each QA pair (using question field)
+  if (Array.isArray(qaData.qa_pairs)) {
+    qaData.qa_pairs.forEach((pair) => {
+      const candidateTokens = tokenizeAndStem(pair.question);
+      let score = jaccardSimilarity(queryTokens, candidateTokens);
+
+      // Bonus if the candidate question is an exact substring of the query
+      if (query.toLowerCase().includes(pair.question.toLowerCase())) {
+        score += 0.1;
+      }
+      if (score > best.score) {
+        best = {
+          score,
+          source: `QA: ${pair.question.substring(0, 30)}...`,
+          answer: pair.answer,
+        };
+      }
+    });
+  }
+
+  // Check additional facts if available
+  if (Array.isArray(qaData.facts)) {
+    qaData.facts.forEach((fact) => {
+      const candidateTokens = tokenizeAndStem(fact.topic);
+      let score = jaccardSimilarity(queryTokens, candidateTokens);
+      if (query.toLowerCase().includes(fact.topic.toLowerCase())) {
+        score += 0.1;
+      }
+      if (score > best.score) {
+        best = {
+          score,
+          source: `Fact: ${fact.topic}`,
+          answer: fact.info,
+        };
+      }
+    });
+  }
+
+  return best.score > 0 ? best : null;
+}
+
+// Search in structured JSON data
+function searchStructuredData(query) {
+  const queryTokens = tokenizeAndStem(query);
+  const flatData = flattenObject(structuredData);
+  let best = { score: 0, source: "Structured", answer: null };
+
+  Object.entries(flatData).forEach(([pathStr, value]) => {
+    const candidateStr = typeof value === "string" ? value : String(value);
+    const candidateTokens = tokenizeAndStem(candidateStr + " " + pathStr);
+    let score = jaccardSimilarity(queryTokens, candidateTokens);
+
+    // Bonus for exact matches on key names
+    if (pathStr.toLowerCase().includes(query.toLowerCase())) {
+      score += 0.1;
+    }
+    if (score > best.score) {
+      best = {
+        score,
+        source: `Structured: ${pathStr}`,
+        answer: candidateStr,
+      };
+    }
+  });
+
+  return best.score > 0 ? best : null;
+}
+
+// Search in text data (by sentence)
+function searchTextData(query) {
+  const queryTokens = tokenizeAndStem(query);
+  const sentences = sentenceTokenizer.tokenize(textData);
+  let best = { score: 0, source: "Text", answer: null };
+
+  sentences.forEach((sentence) => {
+    const candidateTokens = tokenizeAndStem(sentence);
+    let score = jaccardSimilarity(queryTokens, candidateTokens);
+
+    // Bonus if the sentence includes the full query (or parts of it)
+    if (sentence.toLowerCase().includes(query.toLowerCase())) {
+      score += 0.1;
+    }
+    if (score > best.score) {
+      best = {
+        score,
+        source: "Text Knowledge",
+        answer: sentence,
+      };
+    }
+  });
+
+  return best.score > 0 ? best : null;
+}
+
+// --- API Endpoint ---
+app.post("/api/chat", (req, res) => {
+  const question = req.body.message?.trim();
+  if (!question || question.length < 3) {
+    return res.status(400).json({
+      answer: "Please ask a complete question (at least 3 characters).",
+      source: "input-error",
+    });
+  }
+  console.log(`\n🔍 Query: "${question}"`);
+
+  const results = [
+    searchQAData(question),
+    searchStructuredData(question),
+    searchTextData(question),
+  ].filter((result) => result !== null);
+
+  if (results.length > 0) {
+    // Select the result with the highest score
+    const bestResult = results.reduce((best, curr) =>
+      curr.score > best.score ? curr : best
+    );
+    console.log(
+      `✅ Best match: ${bestResult.source} (score: ${bestResult.score.toFixed(
+        2
+      )})`
+    );
+    return res.json({
+      answer: bestResult.answer,
+      source: bestResult.source,
+      confidence: Math.min(bestResult.score, 1),
+    });
+  }
+
+  res.json({
+    answer:
+      "I couldn't find relevant information. Please try asking something else.",
+    source: "no-match",
+  });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`🚀 Server running on http://localhost:${port}`);
+  console.log(`📚 Data Summary:
+  - Structured fields: ${Object.keys(flattenObject(structuredData)).length}
+  - QA pairs: ${Array.isArray(qaData.qa_pairs) ? qaData.qa_pairs.length : 0}
+  - Text sentences: ${sentenceTokenizer.tokenize(textData).length}`);
+});
