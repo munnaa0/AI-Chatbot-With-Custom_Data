@@ -27,9 +27,10 @@ try {
 const normalizeString = (str) => {
   return str
     .toLowerCase()
-    .replace(/[^a-z0-9]/g, "") // Remove non-alphanumeric characters
-    .replace(/\s+/g, "") // Remove whitespace
-    .replace(/s$/, ""); // Remove trailing 's' for pluralization
+    .normalize("NFKD")
+    .replace(/[^\p{L}\p{N}]/gu, "") // Allow all Unicode letters and numbers
+    .replace(/\s+/g, "")
+    .replace(/s$/, ""); // Optionally remove trailing 's'
 };
 
 // --- API Endpoint ---
@@ -52,10 +53,8 @@ app.post("/api/chat", (req, res) => {
     query.includes("available recipes") ||
     query.includes("recipe list") ||
     query.includes("recipe names") ||
-    query.includes("recipe names") ||
     query.includes("all recipie") ||
-    query.includes("all recipies") ||
-    query.includes("recipe names")
+    query.includes("all recipies")
   ) {
     let responseText = "All Available Recipes:<br><br>";
     recipes.forEach((recipe, index) => {
@@ -68,7 +67,7 @@ app.post("/api/chat", (req, res) => {
     });
   }
 
-  // Improved matching with aliases support
+  // Improved matching with aliases support and partial matching
   const normalizedQuery = normalizeString(query);
   const matchedRecipes = recipes
     .map((recipe) => {
@@ -76,9 +75,9 @@ app.post("/api/chat", (req, res) => {
       const allNames = [recipe.name, ...(recipe.aliases || [])];
       // Find all normalized versions
       const normalizedNames = allNames.map(normalizeString);
-      // Find matching names
-      const matches = normalizedNames.filter((n) =>
-        normalizedQuery.includes(n)
+      // Check for matches: either normalized query is included in the recipe name or vice versa
+      const matches = normalizedNames.filter(
+        (n) => n.includes(normalizedQuery) || normalizedQuery.includes(n)
       );
       return {
         ...recipe,

@@ -23,13 +23,14 @@ try {
   process.exit(1);
 }
 
-// Helper function to normalize recipe names and queries
+// Helper function to normalize names and queries
 const normalizeString = (str) => {
   return str
     .toLowerCase()
-    .replace(/[^a-z0-9]/g, "") // Remove non-alphanumeric characters
-    .replace(/\s+/g, "") // Remove whitespace
-    .replace(/s$/, ""); // Remove trailing 's' for pluralization
+    .normalize("NFKD")
+    .replace(/[^\p{L}\p{N}]/gu, "") // Allow all Unicode letters and numbers
+    .replace(/\s+/g, "")
+    .replace(/s$/, ""); // Optionally remove trailing 's'
 };
 
 // --- API Endpoint ---
@@ -45,7 +46,16 @@ app.post("/api/chat", (req, res) => {
   console.log(`\n🔍 Recipe query: "${query}"`);
 
   // Check if the query asks for all recipes
-  if (query.includes("all recipe") || query.includes("all recipes")) {
+  if (
+    query.includes("all recipe") ||
+    query.includes("all recipes") ||
+    query.includes("list of recipes") ||
+    query.includes("available recipes") ||
+    query.includes("recipe list") ||
+    query.includes("recipe names") ||
+    query.includes("all recipie") ||
+    query.includes("all recipies")
+  ) {
     let responseText = "All Available Recipes:<br><br>";
     recipes.forEach((recipe, index) => {
       responseText += `${index + 1}. ${recipe.name}<br>`;
@@ -57,20 +67,36 @@ app.post("/api/chat", (req, res) => {
     });
   }
 
-  // Improved matching logic with normalization
+  // Improved matching with aliases support and partial matching
   const normalizedQuery = normalizeString(query);
   const matchedRecipes = recipes
-    .map((recipe) => ({
-      ...recipe,
-      normalized: normalizeString(recipe.name),
-    }))
-    .filter((recipe) => normalizedQuery.includes(recipe.normalized))
-    .sort((a, b) => b.normalized.length - a.normalized.length);
+    .map((recipe) => {
+      // Combine main name and aliases
+      const allNames = [recipe.name, ...(recipe.aliases || [])];
+      // Find all normalized versions
+      const normalizedNames = allNames.map(normalizeString);
+      // Check for matches: either normalized query is included in the recipe name or vice versa
+      const matches = normalizedNames.filter(
+        (n) => n.includes(normalizedQuery) || normalizedQuery.includes(n)
+      );
+      return {
+        ...recipe,
+        normalizedNames,
+        matchStrength:
+          matches.length > 0 ? Math.max(...matches.map((m) => m.length)) : 0,
+      };
+    })
+    .filter((recipe) => recipe.matchStrength > 0)
+    .sort((a, b) => b.matchStrength - a.matchStrength);
 
   const bestMatch = matchedRecipes[0];
 
   if (bestMatch) {
-    let responseText = `Recipe for ${bestMatch.name.toUpperCase()}:<br><br>Ingredients:<br>`;
+    let responseText = `Recipe for ${bestMatch.name.toUpperCase()}`;
+    if (bestMatch.aliases) {
+      responseText += ` (also known as: ${bestMatch.aliases.join(", ")})`;
+    }
+    responseText += `:<br><br>Ingredients:<br>`;
     bestMatch.ingredients.forEach((ingredient) => {
       responseText += `- ${ingredient}<br>`;
     });
