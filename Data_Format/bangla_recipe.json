@@ -1,34 +1,51 @@
 {
   "recipes": [
     {
-      "name": "rice",
+      "name": "ভাত",
+      "aliases": ["Steamed Rice", "Bhaat", "Boiled Rice", "Plain Rice", "Vat"],
       "ingredients": [
-        "1 cup rice",
-        "2 cups water",
-        "Salt to taste",
-        "1 tsp oil (optional)"
+        "২ কাপ চাল (বাসমতি/সাধারণ)",
+        "৪ কাপ পানি",
+        "১ চিমটি লবণ",
+        "১ চা চামচ ঘি (ঐচ্ছিক)"
       ],
       "instructions": [
-        "Rinse the rice thoroughly under running water.",
-        "Bring water to a boil in a medium-sized pot.",
-        "Add rice, salt, and oil (if using) to the boiling water.",
-        "Reduce heat to low, cover the pot, and simmer for 15-20 minutes until the water is absorbed.",
-        "Turn off the heat and let it rest for 5 minutes before serving."
+        "চাল বাছাই: চাল ছড়িয়ে দেখে পাথর/আবর্জনা সরান",
+        "প্রথম ধোয়া: বাটিতে চাল নিয়ে হালকা ঘষে প্রথম পানি ফেলে দিন",
+        "দ্বিতীয় ধোয়া: নতুন পানি দিয়ে ৩ বার ঝাঁকিয়ে পানি ফেলুন",
+        "ভিজানো: ৩০ মিনিট পানিতে ভিজিয়ে রাখুন (বাসমতি ১ ঘণ্টা)",
+        "সিদ্ধ করা: ভারী হাঁড়িতে চাল-পানি-লবণ মিশিয়ে ফুটান",
+        "আঁচ নিয়ন্ত্রণ: ফুটে উঠলে কাঠের হাতা দিয়ে একবার নেড়ে আঁচ কমান",
+        "বাষ্পীকরণ: ঢাকনা আধা খুলে ১৫-২০ মিনিট সিদ্ধ করুন",
+        "পরীক্ষা: চালের কাঁটা ভাঙলে চুলা বন্ধ করুন",
+        "রেস্টিং: ১০ মিনিট ঢেকে রাখুন",
+        "পরিবেশন: কাঠের হাতা দিয়ে আলতো করে উঠান"
       ]
     },
     {
-      "name": "pasta",
+      "name": "খিচুড়ি",
+      "aliases": ["Khichuri", "Comfort Lentil Rice"],
       "ingredients": [
-        "200g pasta",
-        "4 cups water",
-        "Salt to taste",
-        "1 tbsp olive oil"
+        "১ কাপ চাল",
+        "½ কাপ মুসুর ডাল",
+        "১ টি পেঁয়াজ (স্লাইস)",
+        "১ টি টমেটো (কুচি)",
+        "১ চা চামচ আদা-রসুন পেস্ট",
+        "½ চা চামচ হলুদ",
+        "২ টি তেজপাতা",
+        "ঘি"
       ],
       "instructions": [
-        "Fill a large pot with water and bring it to a boil.",
-        "Add salt and olive oil to the boiling water.",
-        "Add the pasta and cook according to the package instructions until al dente.",
-        "Drain the pasta and serve with your favorite sauce."
+        "ডাল প্রস্তুতি: মুসুর ডাল ১ ঘণ্টা ভিজিয়ে খোসা ছাড়ান",
+        "চাল-ডাল মিশ্রণ: চাল-ডাল ৫ বার ধুয়ে পানি ঝরান",
+        "তেল টেম্পারিং: কড়াইয়ে ঘি গরম করে তেজপাতা ভাজুন",
+        "পেঁয়াজ ভাজা: স্লাইস করা পেঁয়াজ সোনালি করুন",
+        "মসলা যোগ: আদা-রসুন পেস্ট ও হলুদ ২ মিনিট ভাজুন",
+        "টমেটো কুক: টমেটো নরম হওয়া পর্যন্ত ভুনুন",
+        "চাল-ডাল ভাজা: মিশ্রণ যোগ করে ৫ মিনিট ভাজুন",
+        "পানি যোগ: ৪ কাপ ফুটন্ত পানি ঢালুন",
+        "প্রেশার কুক: ৩ সিটি পর্যন্ত রান্না করুন",
+        "পরিবেশন: ঘি ছিটিয়ে গরম গরম দিন"
       ]
     }
   ]

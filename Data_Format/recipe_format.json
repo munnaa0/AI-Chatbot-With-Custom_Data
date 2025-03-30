@@ -1,7 +1,8 @@
 {
   "recipes": [
     {
-      "name": "rice",
+      "name": "Rice",
+      "aliases": ["Steamed Rice", "White Rice", "Plain Rice"],
       "ingredients": [
         "1 cup rice",
         "2 cups water",
@@ -17,7 +18,8 @@
       ]
     },
     {
-      "name": "pasta",
+      "name": "Pasta",
+      "aliases": ["Spaghetti", "Noodles", "Macaroni"],
       "ingredients": [
         "200g pasta",
         "4 cups water",
