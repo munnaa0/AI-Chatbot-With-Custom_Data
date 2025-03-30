@@ -44,14 +44,14 @@ app.post("/api/chat", (req, res) => {
 
   console.log(`\n🔍 Recipe query: "${query}"`);
 
-  // Check if the query is asking for a specific recipe
+  // Check if the query is asking for a specific recipe category
   if (
     query.includes("bengali recipies") ||
     query.includes("bengali recipe") ||
     query.includes("bengali recipes")
   ) {
     // Take first 100 entries using slice()
-    const limitedRecipes = recipes.slice(0, 100);
+    const limitedRecipes = recipes.slice(0, 102);
 
     let responseText = `------------------------------<b>Bengali Recipes</b>-----------------------<br><br>`;
 
@@ -72,7 +72,7 @@ app.post("/api/chat", (req, res) => {
     query.includes("japanese recipes") ||
     query.includes("japanese recipie")
   ) {
-    const limitedRecipes = recipes.slice(100, 188);
+    const limitedRecipes = recipes.slice(102, 190);
 
     let responseText = `------------------------------<b>Japanese Recipes</b>-----------------------<br><br>`;
 
@@ -93,7 +93,7 @@ app.post("/api/chat", (req, res) => {
     query.includes("italian recipes") ||
     query.includes("italian recipie")
   ) {
-    const limitedRecipes = recipes.slice(188, 284);
+    const limitedRecipes = recipes.slice(190, 286);
 
     let responseText = `------------------------------<b>Italian Recipes</b>-----------------------<br><br>`;
 
@@ -114,9 +114,30 @@ app.post("/api/chat", (req, res) => {
     query.includes("chinese recipes") ||
     query.includes("chinese recipie")
   ) {
-    const limitedRecipes = recipes.slice(284, 384);
+    const limitedRecipes = recipes.slice(286, 386);
 
     let responseText = `------------------------------<b>Chinese Recipes</b>-----------------------<br><br>`;
+
+    limitedRecipes.forEach((recipe, index) => {
+      responseText += `${index + 1}. ${recipe.name}<br>`;
+    });
+
+    return res.json({
+      answer: responseText,
+      source: "Recipe Database",
+      confidence: 1.0,
+    });
+  }
+
+  if (
+    query.includes("american recipies") ||
+    query.includes("american recipe") ||
+    query.includes("american recipes") ||
+    query.includes("american recipie")
+  ) {
+    const limitedRecipes = recipes.slice(386, 436);
+
+    let responseText = `------------------------------<b>American Recipes</b>-----------------------<br><br>`;
 
     limitedRecipes.forEach((recipe, index) => {
       responseText += `${index + 1}. ${recipe.name}<br>`;
@@ -144,17 +165,21 @@ app.post("/api/chat", (req, res) => {
       "------------------------------<b>Bengali Recipes</b>-----------------------<br><br>";
     recipes.forEach((recipe, index) => {
       // Insert Japanese Recipes header after 100 recipes
-      if (index === 100) {
+      if (index === 102) {
         responseText +=
           "<br>------------------------------<b>Japanese Recipes</b>----------------------<br><br>";
       }
-      if (index === 188) {
+      if (index === 190) {
         responseText +=
           "<br>------------------------------<b>Italian Recipes</b>----------------------<br><br>";
       }
-      if (index === 284) {
+      if (index === 286) {
         responseText +=
           "<br>------------------------------<b>Chinese Recipes</b>----------------------<br><br>";
+      }
+      if (index === 386) {
+        responseText +=
+          "<br>------------------------------<b>American Recipes</b>----------------------<br><br>";
       }
       responseText += `${index + 1}. ${recipe.name}<br>`;
     });
@@ -166,7 +191,7 @@ app.post("/api/chat", (req, res) => {
   }
 
   // Improved matching with aliases support and partial matching
-  // Split the query into tokens before normalizing
+  // Split the query into tokens and normalize each token
   const queryTokens = query.split(" ").map((token) => normalizeString(token));
 
   const matchedRecipes = recipes
@@ -175,21 +200,40 @@ app.post("/api/chat", (req, res) => {
       const allNames = [recipe.name, ...(recipe.aliases || [])];
       // Normalize each name
       const normalizedNames = allNames.map(normalizeString);
-      // Check for matches: if any query token is found in any normalized name (or vice versa)
-      const tokenMatches = queryTokens.filter((token) =>
-        normalizedNames.some((n) => n.includes(token) || token.includes(n))
+
+      // For each normalized name, count how many query tokens it contains and the total length of matched tokens
+      const bestMatchMetrics = normalizedNames.reduce(
+        (acc, n) => {
+          let count = 0;
+          let total = 0;
+          queryTokens.forEach((token) => {
+            if (n.includes(token)) {
+              count++;
+              total += token.length;
+            }
+          });
+          if (count > acc.count || (count === acc.count && total > acc.total)) {
+            return { count, total };
+          }
+          return acc;
+        },
+        { count: 0, total: 0 }
       );
+
       return {
         ...recipe,
         normalizedNames,
-        matchStrength:
-          tokenMatches.length > 0
-            ? Math.max(...tokenMatches.map((t) => t.length))
-            : 0,
+        matchStrength: bestMatchMetrics.count,
+        matchTotal: bestMatchMetrics.total,
       };
     })
     .filter((recipe) => recipe.matchStrength > 0)
-    .sort((a, b) => b.matchStrength - a.matchStrength);
+    .sort((a, b) => {
+      if (b.matchStrength !== a.matchStrength) {
+        return b.matchStrength - a.matchStrength;
+      }
+      return b.matchTotal - a.matchTotal;
+    });
 
   const bestMatch = matchedRecipes[0];
 

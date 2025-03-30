@@ -51,7 +51,7 @@ app.post("/api/chat", (req, res) => {
     query.includes("bengali recipes")
   ) {
     // Take first 100 entries using slice()
-    const limitedRecipes = recipes.slice(0, 100);
+    const limitedRecipes = recipes.slice(0, 102);
 
     let responseText = `------------------------------<b>Bengali Recipes</b>-----------------------<br><br>`;
 
@@ -72,7 +72,7 @@ app.post("/api/chat", (req, res) => {
     query.includes("japanese recipes") ||
     query.includes("japanese recipie")
   ) {
-    const limitedRecipes = recipes.slice(100, 188);
+    const limitedRecipes = recipes.slice(102, 190);
 
     let responseText = `------------------------------<b>Japanese Recipes</b>-----------------------<br><br>`;
 
@@ -93,7 +93,7 @@ app.post("/api/chat", (req, res) => {
     query.includes("italian recipes") ||
     query.includes("italian recipie")
   ) {
-    const limitedRecipes = recipes.slice(188, 284);
+    const limitedRecipes = recipes.slice(190, 286);
 
     let responseText = `------------------------------<b>Italian Recipes</b>-----------------------<br><br>`;
 
@@ -114,9 +114,30 @@ app.post("/api/chat", (req, res) => {
     query.includes("chinese recipes") ||
     query.includes("chinese recipie")
   ) {
-    const limitedRecipes = recipes.slice(284, 384);
+    const limitedRecipes = recipes.slice(286, 386);
 
     let responseText = `------------------------------<b>Chinese Recipes</b>-----------------------<br><br>`;
+
+    limitedRecipes.forEach((recipe, index) => {
+      responseText += `${index + 1}. ${recipe.name}<br>`;
+    });
+
+    return res.json({
+      answer: responseText,
+      source: "Recipe Database",
+      confidence: 1.0,
+    });
+  }
+
+  if (
+    query.includes("american recipies") ||
+    query.includes("american recipe") ||
+    query.includes("american recipes") ||
+    query.includes("american recipie")
+  ) {
+    const limitedRecipes = recipes.slice(386, 436);
+
+    let responseText = `------------------------------<b>American Recipes</b>-----------------------<br><br>`;
 
     limitedRecipes.forEach((recipe, index) => {
       responseText += `${index + 1}. ${recipe.name}<br>`;
@@ -144,17 +165,21 @@ app.post("/api/chat", (req, res) => {
       "------------------------------<b>Bengali Recipes</b>-----------------------<br><br>";
     recipes.forEach((recipe, index) => {
       // Insert Japanese Recipes header after 100 recipes
-      if (index === 100) {
+      if (index === 102) {
         responseText +=
           "<br>------------------------------<b>Japanese Recipes</b>----------------------<br><br>";
       }
-      if (index === 188) {
+      if (index === 190) {
         responseText +=
           "<br>------------------------------<b>Italian Recipes</b>----------------------<br><br>";
       }
-      if (index === 284) {
+      if (index === 286) {
         responseText +=
           "<br>------------------------------<b>Chinese Recipes</b>----------------------<br><br>";
+      }
+      if (index === 386) {
+        responseText +=
+          "<br>------------------------------<b>American Recipes</b>----------------------<br><br>";
       }
       responseText += `${index + 1}. ${recipe.name}<br>`;
     });

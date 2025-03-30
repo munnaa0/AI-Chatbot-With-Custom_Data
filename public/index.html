@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Assistant</title>
+    <title>Recipe Chatbot</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -17,10 +17,10 @@
   <body>
     <div class="chat-container">
       <div class="chat-header">
-        <i class="fas fa-robot"></i>
+        <i class="fas fa-utensils"></i>
         <div class="header-text">
-          <h1>Recipe Assistant</h1>
-          <p>What recipe you want to know ??</p>
+          <h1>Recipe Chatbot</h1>
+          <p>Looking for a new recipe? Ask away!</p>
         </div>
         <button id="themeToggle">
           <i class="fas fa-moon"></i>
@@ -29,16 +29,19 @@
       <div class="chat-messages" id="chatMessages">
         <div class="message bot-message">
           <i
-            >Welcome to Recipe Assistant !!! What recipe you want to know ??
-          </i>
+            >Welcome to Recipe Chatbot! What recipe would you like to explore
+            today?</i
+          >
         </div>
         <div class="message bot-message">
           <i>
-            Type 'All Recipes' to know about all Recipes availabe. <br />
-            Type - 'Bengali Recipes' to know about all Bengali Recipes. <br />
-            Type - 'Japanese Recipes' to know about all Japanese Recipes. <br />
-            Type - 'Italian Recipes' to know about all Italian Recipes. <br />
-            Type - 'Chinese Recipes' to know about all Chinese Recipes.
+            Try typing:<br />
+            - 'All Recipes' to see every recipe we offer.<br />
+            - 'Bengali Recipes' for Bengali specialties.<br />
+            - 'Japanese Recipes' for Japanese favorites.<br />
+            - 'Italian Recipes' for Italian classics.<br />
+            - 'Chinese Recipes' for Chinese delights.<br />
+            - 'American Recipes' for a taste of America.<br />
           </i>
         </div>
       </div>
@@ -46,7 +49,7 @@
         <input
           type="text"
           id="userInput"
-          placeholder="Enter a recipe Name..."
+          placeholder="Enter a recipe name or ingredient..."
         />
         <button id="sendButton">
           <i class="fas fa-paper-plane"></i>
