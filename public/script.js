@@ -31,12 +31,42 @@ document.addEventListener("DOMContentLoaded", () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
+  // ---------------------------
+  // New functionality starts here:
+  // Create a container for dynamic prompt links in the sidebar.
+  const sidebarLinks = document.querySelector(".sidebar-links");
+  const dynamicLinkContainer = document.createElement("div");
+  dynamicLinkContainer.id = "dynamicSidebarLinks";
+  sidebarLinks.appendChild(dynamicLinkContainer);
+
+  function updateSidebarWithPrompt(promptText) {
+    const newLink = document.createElement("div");
+    newLink.className = "sidebar-link suggestion-btn";
+    newLink.textContent = promptText;
+    dynamicLinkContainer.appendChild(newLink);
+    // Keep only the last two prompt links.
+    if (dynamicLinkContainer.children.length > 3) {
+      dynamicLinkContainer.removeChild(dynamicLinkContainer.firstChild);
+    }
+    // Allow clicking on the dynamic link to send that prompt.
+    newLink.addEventListener("click", () => {
+      activeInput.value = promptText;
+      sendMessage();
+    });
+  }
+  // ---------------------------
+  // New functionality ends here.
+
   async function sendMessage() {
     const question = initialInput.value.trim() || activeInput.value.trim();
     if (!question) return;
 
     if (isFirstMessage) activateChat();
     addMessage(question, true);
+
+    // NEW: Add the prompt to the sidebar links.
+    updateSidebarWithPrompt(question);
+
     initialInput.value = "";
     activeInput.value = "";
     sendButtons.forEach((btn) => (btn.disabled = true));

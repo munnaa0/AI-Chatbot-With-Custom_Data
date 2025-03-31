@@ -109,7 +109,6 @@ body {
 .active-state .chat-header {
   display: flex;
   align-items: center;
-
   padding: 1rem 1rem;
   background: var(--background-gradient);
   gap: 1rem;
