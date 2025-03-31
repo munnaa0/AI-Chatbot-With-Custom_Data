@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sendButtons = document.querySelectorAll(
     "#sendButton, #sendButtonActive"
   );
+  const themeToggle = document.getElementById("themeToggle");
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   let isFirstMessage = true;
 
+  // Activate chat state
   function activateChat() {
     chatContainer.classList.add("active");
     isFirstMessage = false;
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 50);
   }
 
+  // Unified message handling
   function addMessage(text, isUser = true) {
     const messageDiv = document.createElement("div");
     messageDiv.className = `message ${isUser ? "user-message" : "bot-message"}`;
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
+  // Unified send handler
   async function sendMessage() {
     const question = initialInput.value.trim() || activeInput.value.trim();
     if (!question) return;
@@ -41,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     activeInput.value = "";
     sendButtons.forEach((btn) => (btn.disabled = true));
 
+    // Show loading state
     const loadingDiv = document.createElement("div");
     loadingDiv.className = "message bot-message";
     loadingDiv.innerHTML = `<div class="loading-dots"><div></div><div></div><div></div><div></div></div>`;
@@ -73,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Event listeners
   document.querySelectorAll(".suggestion-btn").forEach((button) => {
     button.addEventListener("click", (e) => {
       const query = e.target.textContent.trim();
@@ -93,6 +99,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Theme management
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme") || "light";
+  body.setAttribute("data-theme", savedTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = body.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    themeToggle.innerHTML =
+      newTheme === "dark"
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+  });
+
+  // Scroll handling
   chatMessages.addEventListener("scroll", () => {
     scrollTopBtn.classList.toggle("visible", chatMessages.scrollTop > 200);
   });
@@ -100,4 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollTopBtn.addEventListener("click", () => {
     chatMessages.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // Initialize theme icon
+  themeToggle.innerHTML =
+    savedTheme === "dark"
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
 });
